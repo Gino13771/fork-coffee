@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xcs-0K-Gbs">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="82d-Zp-Pl3">
+            <objects>
+                <navigationController id="xcs-0K-Gbs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JC8-c5-lHX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.1176470518" green="0.20784312490000001" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gzY-Wp-how" kind="relationship" relationship="rootViewController" id="flk-of-UPK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iX3-xA-Osl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1399" y="-46"/>
+        </scene>
+        <!--關於-->
+        <scene sceneID="nPb-td-qDL">
+            <objects>
+                <viewController id="VPm-uz-qyH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gWe-Jc-hqH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="APP版本：1.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuE-SY-Qv8">
+                                <rect key="frame" x="0.0" y="103" width="393" height="39"/>
+                                <color key="textColor" red="0.96070724730000001" green="0.77662191110000001" blue="0.52165373820000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sloffee2" translatesAutoresizingMaskIntoConstraints="NO" id="ReR-iy-995">
+                                <rect key="frame" x="10" y="162" width="373" height="595"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kv1-g0-Q1t"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WuE-SY-Qv8" firstAttribute="top" secondItem="Kv1-g0-Q1t" secondAttribute="top" id="70t-hT-VoN"/>
+                            <constraint firstItem="ReR-iy-995" firstAttribute="top" secondItem="WuE-SY-Qv8" secondAttribute="bottom" constant="20" id="BaR-h5-BzI"/>
+                            <constraint firstItem="WuE-SY-Qv8" firstAttribute="centerX" secondItem="gWe-Jc-hqH" secondAttribute="centerX" id="Bpx-XF-jnV"/>
+                            <constraint firstItem="ReR-iy-995" firstAttribute="top" secondItem="gWe-Jc-hqH" secondAttribute="topMargin" constant="59" id="Etq-Nk-XD3"/>
+                            <constraint firstItem="Kv1-g0-Q1t" firstAttribute="trailing" secondItem="WuE-SY-Qv8" secondAttribute="trailing" id="JM9-oc-fzB"/>
+                            <constraint firstItem="ReR-iy-995" firstAttribute="centerX" secondItem="gWe-Jc-hqH" secondAttribute="centerX" id="Qf4-zW-JP9"/>
+                            <constraint firstItem="Kv1-g0-Q1t" firstAttribute="trailing" secondItem="ReR-iy-995" secondAttribute="trailing" constant="10" id="ZYv-kq-i39"/>
+                            <constraint firstItem="WuE-SY-Qv8" firstAttribute="leading" secondItem="Kv1-g0-Q1t" secondAttribute="leading" id="vRL-Ka-xFQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ReR-iy-995" secondAttribute="bottom" constant="12" id="xu5-zn-5cd"/>
+                            <constraint firstItem="ReR-iy-995" firstAttribute="leading" secondItem="Kv1-g0-Q1t" secondAttribute="leading" constant="10" id="zLx-Ys-dGB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="關於" id="fip-C0-bNz">
+                        <imageReference key="image" image="globe" catalog="system" renderingMode="hierarchical-single">
+                            <hierarchicalColors>
+                                <color red="0.1176470518" green="0.20784312490000001" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIY-o2-agh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608" y="846"/>
+        </scene>
+        <!--我的最愛-->
+        <scene sceneID="Wth-ax-qMM">
+            <objects>
+                <viewController id="awb-rI-aal" customClass="FavoritesViewController" customModule="explore_coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ucW-4n-LqE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zAA-Xq-KEF">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mep-La-bub"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mep-La-bub" firstAttribute="trailing" secondItem="zAA-Xq-KEF" secondAttribute="trailing" id="0zM-9h-ufi"/>
+                            <constraint firstItem="zAA-Xq-KEF" firstAttribute="leading" secondItem="mep-La-bub" secondAttribute="leading" id="M0X-Fh-rq8"/>
+                            <constraint firstItem="zAA-Xq-KEF" firstAttribute="top" secondItem="ucW-4n-LqE" secondAttribute="top" id="Sah-RP-Jfa"/>
+                            <constraint firstItem="mep-La-bub" firstAttribute="bottom" secondItem="zAA-Xq-KEF" secondAttribute="bottom" id="m1n-nI-yNM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我的最愛" id="v4X-Yi-xXh">
+                        <imageReference key="image" image="suit.heart.fill" catalog="system" renderingMode="hierarchical-single" variableValue="0.0">
+                            <hierarchicalColors>
+                                <color systemColor="systemPinkColor"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="zAA-Xq-KEF" id="WV6-MO-9RU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3E9-Ea-2Xe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-373" y="846"/>
+        </scene>
+        <!--首頁-->
+        <scene sceneID="jWG-nE-L9u">
+            <objects>
+                <viewController id="Kib-vP-qhO" customClass="ViewController" customModule="explore_coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fWM-gn-s5q">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trg-xL-Tiu">
+                                <rect key="frame" x="307" y="139" width="20.666666666666686" height="22"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchCity:" destination="Kib-vP-qhO" eventType="touchUpInside" id="NH8-ds-SKg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="探索咖啡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfP-Bh-QJK">
+                                <rect key="frame" x="162" y="103" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sV-cI-fny" userLabel="Text Field">
+                                <rect key="frame" x="91" y="129" width="211" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="location"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="148" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eWT-aC-2gb">
+                                <rect key="frame" x="0.0" y="188" width="393" height="581"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sloffee" translatesAutoresizingMaskIntoConstraints="NO" id="hXe-iN-232">
+                                <rect key="frame" x="0.0" y="188" width="393" height="581"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xVw-PG-e42"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="tintColor"/>
+                        <constraints>
+                            <constraint firstItem="PfP-Bh-QJK" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="7PO-HL-fkY"/>
+                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="top" secondItem="xVw-PG-e42" secondAttribute="top" constant="36" id="86N-m2-Imr"/>
+                            <constraint firstItem="hXe-iN-232" firstAttribute="trailing" secondItem="xVw-PG-e42" secondAttribute="trailing" id="FKS-9Q-j6d"/>
+                            <constraint firstItem="hXe-iN-232" firstAttribute="leading" secondItem="xVw-PG-e42" secondAttribute="leading" id="Hb8-Su-zyu"/>
+                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="leading" secondItem="1sV-cI-fny" secondAttribute="trailing" constant="5" id="ME7-j1-OeS"/>
+                            <constraint firstItem="eWT-aC-2gb" firstAttribute="trailing" secondItem="xVw-PG-e42" secondAttribute="trailing" id="OQB-ES-YeH"/>
+                            <constraint firstItem="hXe-iN-232" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="S1C-Pd-Bb2"/>
+                            <constraint firstItem="1sV-cI-fny" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="TDH-XE-mI8"/>
+                            <constraint firstItem="eWT-aC-2gb" firstAttribute="top" secondItem="1sV-cI-fny" secondAttribute="bottom" constant="25" id="amj-u3-kJa"/>
+                            <constraint firstItem="PfP-Bh-QJK" firstAttribute="top" secondItem="xVw-PG-e42" secondAttribute="top" id="gJt-a6-e3S"/>
+                            <constraint firstAttribute="bottom" secondItem="eWT-aC-2gb" secondAttribute="bottom" constant="83" id="gR3-mj-uXl"/>
+                            <constraint firstItem="1sV-cI-fny" firstAttribute="leading" secondItem="xVw-PG-e42" secondAttribute="leading" constant="91" id="gRu-bc-s0F"/>
+                            <constraint firstItem="eWT-aC-2gb" firstAttribute="leading" secondItem="xVw-PG-e42" secondAttribute="leading" id="hEO-mA-gwu"/>
+                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="leading" secondItem="1sV-cI-fny" secondAttribute="trailing" constant="5" id="jTw-wG-qvV"/>
+                            <constraint firstAttribute="bottom" secondItem="hXe-iN-232" secondAttribute="bottom" constant="83" id="o60-xk-HoP"/>
+                            <constraint firstItem="hXe-iN-232" firstAttribute="top" secondItem="xVw-PG-e42" secondAttribute="top" constant="85" id="qG3-Kf-S5v"/>
+                            <constraint firstItem="eWT-aC-2gb" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="qdl-jj-EL0"/>
+                            <constraint firstItem="1sV-cI-fny" firstAttribute="top" secondItem="PfP-Bh-QJK" secondAttribute="bottom" constant="5" id="wxw-Md-8mU"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="首頁" id="6or-tW-5hI">
+                        <imageReference key="image" image="person.fill" catalog="system" renderingMode="hierarchical-single">
+                            <hierarchicalColors>
+                                <color systemColor="systemTealColor"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="gTv-Ws-6kg"/>
+                    <connections>
+                        <outlet property="tableview" destination="eWT-aC-2gb" id="ZCo-Fw-e6R"/>
+                        <outlet property="textField" destination="1sV-cI-fny" id="KRW-oR-tGa"/>
+                        <segue destination="hxT-ZT-HmS" kind="show" identifier="showDetail" id="kf3-Aw-RE9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cri-f1-SGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608.39694656488552" y="-46.478873239436624"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Gwf-Cv-XJi">
+            <objects>
+                <viewController id="hxT-ZT-HmS" customClass="DetailViewController" customModule="explore_coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lV9-z4-J4o">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-eJ-TL3">
+                                <rect key="frame" x="20" y="107" width="373" height="20.666666666666671"/>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3A-N0-3s9">
+                                <rect key="frame" x="20" y="177.66666666666666" width="373" height="20"/>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="營業時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opB-6I-F8P">
+                                <rect key="frame" x="20" y="247.66666666666666" width="373" height="20.333333333333343"/>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfx-xp-9Ej">
+                                <rect key="frame" x="5" y="768" width="383" height="56"/>
+                                <color key="backgroundColor" red="0.1176470518" green="0.20784312490000001" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="導航">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="navv:" destination="hxT-ZT-HmS" eventType="touchUpInside" id="INb-6w-JKc"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12X-Z8-A8l">
+                                <rect key="frame" x="5" y="315" width="383" height="445"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hFI-8B-lsm"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="12X-Z8-A8l" firstAttribute="top" secondItem="opB-6I-F8P" secondAttribute="bottom" constant="50" id="5Yf-xU-TNO"/>
+                            <constraint firstItem="opB-6I-F8P" firstAttribute="leading" secondItem="hFI-8B-lsm" secondAttribute="leading" constant="20" id="5gS-xs-BUI"/>
+                            <constraint firstAttribute="trailing" secondItem="bPi-eJ-TL3" secondAttribute="trailing" id="6sD-lz-qtJ"/>
+                            <constraint firstItem="opB-6I-F8P" firstAttribute="top" secondItem="v3A-N0-3s9" secondAttribute="bottom" constant="50" id="DzW-KE-KP0"/>
+                            <constraint firstAttribute="bottom" secondItem="12X-Z8-A8l" secondAttribute="bottom" constant="89" id="OZk-8Q-g9k"/>
+                            <constraint firstItem="Sfx-xp-9Ej" firstAttribute="leading" secondItem="hFI-8B-lsm" secondAttribute="leading" constant="5" id="PZH-rk-un3"/>
+                            <constraint firstAttribute="trailing" secondItem="opB-6I-F8P" secondAttribute="trailing" id="Pe5-2Y-955"/>
+                            <constraint firstItem="v3A-N0-3s9" firstAttribute="leading" secondItem="hFI-8B-lsm" secondAttribute="leading" constant="20" id="Pe9-A7-nGK"/>
+                            <constraint firstItem="hFI-8B-lsm" firstAttribute="trailing" secondItem="12X-Z8-A8l" secondAttribute="trailing" constant="5" id="S3s-x9-7lh"/>
+                            <constraint firstItem="v3A-N0-3s9" firstAttribute="top" secondItem="bPi-eJ-TL3" secondAttribute="bottom" constant="50" id="SUh-WG-7v4"/>
+                            <constraint firstItem="bPi-eJ-TL3" firstAttribute="top" secondItem="lV9-z4-J4o" secondAttribute="top" constant="107" id="SV3-69-xxx"/>
+                            <constraint firstItem="v3A-N0-3s9" firstAttribute="top" secondItem="bPi-eJ-TL3" secondAttribute="bottom" constant="50" id="Uvd-ml-Uat"/>
+                            <constraint firstItem="12X-Z8-A8l" firstAttribute="leading" secondItem="hFI-8B-lsm" secondAttribute="leading" constant="5" id="Vjl-tG-OEn"/>
+                            <constraint firstItem="opB-6I-F8P" firstAttribute="top" secondItem="v3A-N0-3s9" secondAttribute="bottom" constant="50" id="Y2O-Fg-zZz"/>
+                            <constraint firstItem="12X-Z8-A8l" firstAttribute="centerX" secondItem="lV9-z4-J4o" secondAttribute="centerX" id="YEn-43-2u4"/>
+                            <constraint firstAttribute="trailing" secondItem="v3A-N0-3s9" secondAttribute="trailing" id="Z17-NM-cov"/>
+                            <constraint firstAttribute="bottom" secondItem="Sfx-xp-9Ej" secondAttribute="bottom" constant="28" id="agl-KO-IqZ"/>
+                            <constraint firstItem="Sfx-xp-9Ej" firstAttribute="centerX" secondItem="lV9-z4-J4o" secondAttribute="centerX" id="f6P-mH-RLq"/>
+                            <constraint firstItem="hFI-8B-lsm" firstAttribute="trailing" secondItem="Sfx-xp-9Ej" secondAttribute="trailing" constant="5" id="kAk-DU-HkD"/>
+                            <constraint firstItem="bPi-eJ-TL3" firstAttribute="leading" secondItem="hFI-8B-lsm" secondAttribute="leading" constant="20" id="kOC-Me-Dd2"/>
+                            <constraint firstItem="12X-Z8-A8l" firstAttribute="top" secondItem="opB-6I-F8P" secondAttribute="bottom" constant="50" id="xxz-aD-Kit"/>
+                            <constraint firstItem="Sfx-xp-9Ej" firstAttribute="top" secondItem="12X-Z8-A8l" secondAttribute="bottom" constant="5" id="zeL-6s-KHC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jGD-Rv-uhq"/>
+                    <connections>
+                        <outlet property="cafeAddress" destination="v3A-N0-3s9" id="tmM-hv-Mqm"/>
+                        <outlet property="cafeName" destination="bPi-eJ-TL3" id="bfA-E5-jZ1"/>
+                        <outlet property="mapView" destination="12X-Z8-A8l" id="iXK-Ta-Rxp"/>
+                        <outlet property="openTime" destination="opB-6I-F8P" id="Ooe-To-oWV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Akp-A2-22v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="-46"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cLs-q0-dxJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gzY-Wp-how" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="0fe-5U-0LW"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Ok-tT-Anl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.96070724730000001" green="0.84843207210000005" blue="0.65978389569999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Kib-vP-qhO" kind="relationship" relationship="viewControllers" id="acE-j1-s40"/>
+                        <segue destination="awb-rI-aal" kind="relationship" relationship="viewControllers" id="LUc-Db-jVD"/>
+                        <segue destination="VPm-uz-qyH" kind="relationship" relationship="viewControllers" id="ihP-kQ-pQn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAJ-2D-A2p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="-46"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="globe" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="sloffee" width="626" height="626"/>
+        <image name="sloffee2" width="750" height="745"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="107"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
