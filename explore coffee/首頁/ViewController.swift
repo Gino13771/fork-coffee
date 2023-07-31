@@ -135,6 +135,3 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
     
     
 }
-
-
-
