@@ -32,32 +32,30 @@
         <!--關於-->
         <scene sceneID="nPb-td-qDL">
             <objects>
-                <viewController id="VPm-uz-qyH" sceneMemberID="viewController">
+                <viewController id="VPm-uz-qyH" customClass="ViewController" customModule="explore_coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gWe-Jc-hqH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="APP版本：1.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuE-SY-Qv8">
-                                <rect key="frame" x="0.0" y="103" width="393" height="39"/>
-                                <color key="textColor" red="0.96070724730000001" green="0.77662191110000001" blue="0.52165373820000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sloffee2" translatesAutoresizingMaskIntoConstraints="NO" id="ReR-iy-995">
                                 <rect key="frame" x="10" y="162" width="373" height="595"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxV-rW-oIL" userLabel="label">
+                                <rect key="frame" x="82" y="72" width="229" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemBrownColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kv1-g0-Q1t"/>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WuE-SY-Qv8" firstAttribute="top" secondItem="Kv1-g0-Q1t" secondAttribute="top" id="70t-hT-VoN"/>
-                            <constraint firstItem="ReR-iy-995" firstAttribute="top" secondItem="WuE-SY-Qv8" secondAttribute="bottom" constant="20" id="BaR-h5-BzI"/>
-                            <constraint firstItem="WuE-SY-Qv8" firstAttribute="centerX" secondItem="gWe-Jc-hqH" secondAttribute="centerX" id="Bpx-XF-jnV"/>
                             <constraint firstItem="ReR-iy-995" firstAttribute="top" secondItem="gWe-Jc-hqH" secondAttribute="topMargin" constant="59" id="Etq-Nk-XD3"/>
-                            <constraint firstItem="Kv1-g0-Q1t" firstAttribute="trailing" secondItem="WuE-SY-Qv8" secondAttribute="trailing" id="JM9-oc-fzB"/>
                             <constraint firstItem="ReR-iy-995" firstAttribute="centerX" secondItem="gWe-Jc-hqH" secondAttribute="centerX" id="Qf4-zW-JP9"/>
                             <constraint firstItem="Kv1-g0-Q1t" firstAttribute="trailing" secondItem="ReR-iy-995" secondAttribute="trailing" constant="10" id="ZYv-kq-i39"/>
-                            <constraint firstItem="WuE-SY-Qv8" firstAttribute="leading" secondItem="Kv1-g0-Q1t" secondAttribute="leading" id="vRL-Ka-xFQ"/>
+                            <constraint firstItem="hxV-rW-oIL" firstAttribute="leading" secondItem="Kv1-g0-Q1t" secondAttribute="leading" constant="82" id="lpC-As-epT"/>
+                            <constraint firstItem="hxV-rW-oIL" firstAttribute="top" secondItem="gWe-Jc-hqH" secondAttribute="top" constant="72" id="mAX-vu-ZPP"/>
+                            <constraint firstItem="Kv1-g0-Q1t" firstAttribute="trailing" secondItem="hxV-rW-oIL" secondAttribute="trailing" constant="82" id="vf2-p1-fce"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ReR-iy-995" secondAttribute="bottom" constant="12" id="xu5-zn-5cd"/>
                             <constraint firstItem="ReR-iy-995" firstAttribute="leading" secondItem="Kv1-g0-Q1t" secondAttribute="leading" constant="10" id="zLx-Ys-dGB"/>
                         </constraints>
@@ -71,10 +69,13 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="versionLabel" destination="hxV-rW-oIL" id="GzZ-zz-P94"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIY-o2-agh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608" y="846"/>
+            <point key="canvasLocation" x="606.87022900763361" y="845.77464788732402"/>
         </scene>
         <!--我的最愛-->
         <scene sceneID="Wth-ax-qMM">
@@ -323,6 +324,9 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

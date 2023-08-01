@@ -10,15 +10,18 @@ import PKHUD
 
 
 class ViewController: UIViewController{
+    
     var cafes = [CafeInfo]()
     var pickerView = UIPickerView()
     let cities = ["taipei","yilan","taoyuan","hsinchu","miaoli","taichung","changhua","Nantou","Yunlin","Chiayi","Tainan","Kaohsiung","Pingtung"]
     
     let apiUrlString = "https://cafenomad.tw/api/v1.2/cafes"
-    var item: RLM_DataModel? // 假设你从其他地方传入了数据项
+    var item: RLM_DataModel? // 
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var versionLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +29,23 @@ class ViewController: UIViewController{
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        textField.inputView = pickerView
-        textField.textAlignment = .center
-        textField.placeholder = "搜尋"
+        textField?.inputView = pickerView
+        textField?.textAlignment = .center
+        textField?.placeholder = "搜尋"
         
-        tableview.delegate = self
-        tableview.dataSource = self
+        tableview?.delegate = self
+        tableview?.dataSource = self
         let nib = UINib(nibName:"CafeTableViewCell", bundle: nil)
-        tableview.register(nib, forCellReuseIdentifier: "CafeTableViewCell")
+        tableview?.register(nib, forCellReuseIdentifier: "CafeTableViewCell")
+        
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+           versionLabel?.text = "App版本: " + version
     }
+      
     
     @objc func saveToRealm(_ sender: UIButton) {
         let index = sender.tag
         let dataModel = cafes[index]
-        
-//        dataModel.id // getFavorites.id
-//        let favoritesArray = favoritesManager.getFavorites()
-        
-        
-        
-        // 將點選到的 cafes 存到 Realm 資料庫
         let data = RLM_DataModel(id: dataModel.id,
                                  name: dataModel.name,
                                  address: dataModel.address,
