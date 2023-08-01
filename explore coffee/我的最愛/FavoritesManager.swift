@@ -8,7 +8,7 @@
 import RealmSwift
 
 class FavoritesManager {
-
+    
     
     func addFavorite(item: RLM_DataModel) {
         do {
@@ -39,4 +39,5 @@ class FavoritesManager {
             return nil
         }
     }
+    
 }

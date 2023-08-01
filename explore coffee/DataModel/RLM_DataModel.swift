@@ -13,7 +13,10 @@ class RLM_DataModel: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var address: String = ""
     @objc dynamic var open_time: String = ""
-    // 其他数据相关的属性
+   
+    override static func primaryKey() -> String? {
+            return "id" //
+        }
     
     convenience init(id: String, name: String, address: String, open_time: String) {
         self.init()

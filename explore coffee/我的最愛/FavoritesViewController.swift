@@ -22,10 +22,15 @@ class FavoritesViewController: UIViewController {
         let nib = UINib(nibName:"FavoritesTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "FavoritesTableViewCell")
 
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { migration, oldSchemaVersion in
+            // Migration code here
+        })
+        Realm.Configuration.defaultConfiguration = config
         
         let favoritesManager = FavoritesManager()
         favoritesArray = favoritesManager.getFavorites()
@@ -38,6 +43,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         return favoritesArray?.count ?? 0
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FavoritesTableViewCell.self), for: indexPath) as! FavoritesTableViewCell
         
@@ -46,5 +52,6 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
 }
 

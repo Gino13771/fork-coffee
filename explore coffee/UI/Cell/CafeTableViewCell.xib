@@ -37,7 +37,7 @@
                                 <rect key="frame" x="336.33333333333331" y="20" width="50.666666666666686" height="35"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="suit.heart.fill" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="suit.heart" catalog="system"/>
                             </button>
                         </subviews>
                         <constraints>
@@ -64,7 +64,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="suit.heart.fill" catalog="system" width="128" height="107"/>
+        <image name="suit.heart" catalog="system" width="128" height="107"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

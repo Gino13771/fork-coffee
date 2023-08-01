@@ -7,6 +7,7 @@
 
 import UIKit
 import PKHUD
+import RealmSwift
 
 
 class ViewController: UIViewController{
@@ -21,6 +22,19 @@ class ViewController: UIViewController{
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
+    
+    @objc func saveToRealm(_ sender: UIButton) {
+        let index = sender.tag
+        let dataModel = cafes[index]
+        let data = RLM_DataModel(id: dataModel.id,
+                                 name: dataModel.name,
+                                 address: dataModel.address,
+                                 open_time: dataModel.open_time)
+        let realm = FavoritesManager()
+        realm.addFavorite(item: data)
+        cafes[index] = dataModel
+               tableview.reloadData()
+    }
     
     
     override func viewDidLoad() {
@@ -40,19 +54,11 @@ class ViewController: UIViewController{
         
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
            versionLabel?.text = "App版本: " + version
+        
+        
     }
       
-    
-    @objc func saveToRealm(_ sender: UIButton) {
-        let index = sender.tag
-        let dataModel = cafes[index]
-        let data = RLM_DataModel(id: dataModel.id,
-                                 name: dataModel.name,
-                                 address: dataModel.address,
-                                 open_time: dataModel.open_time)
-        let realm = FavoritesManager()
-        realm.addFavorite(item: data)
-    }
+
     
     @IBAction func searchCity(_ sender: Any) {
         if let searchText = textField.text {
@@ -78,6 +84,14 @@ class ViewController: UIViewController{
             }
         }
     }
+    func isCafeInDatabase(_ cafeId: String) -> Bool {
+        let realm = try? Realm()
+        if (realm?.object(ofType: RLM_DataModel.self, forPrimaryKey: cafeId)) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 //MARK: - TableViewController
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
@@ -85,19 +99,32 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         return cafes.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"CafeTableViewCell", for: indexPath) as! CafeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CafeTableViewCell", for: indexPath) as! CafeTableViewCell
         
         let cafeInfo = cafes[indexPath.row]
         cell.cafeNameLabel?.text = cafeInfo.name
         cell.cafeAddressLabel.text = cafeInfo.address
         
-        let image = UIImage(systemName: "suit.heart.fill")
-        cell.collectBtn.setImage(image, for: .normal)
+        // Don't set the heart button's image here.
+        // We'll update it in the tableView(_:willDisplay:forRowAt:) method.
+        
         cell.collectBtn.addTarget(self, action: #selector(saveToRealm), for: .touchUpInside)
         cell.collectBtn.tag = indexPath.row
         
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cafeCell = cell as? CafeTableViewCell {
+            let cafeInfo = cafes[indexPath.row]
+            if isCafeInDatabase(cafeInfo.id) {
+                cafeCell.collectBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            } else {
+                cafeCell.collectBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -112,6 +139,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             }
         }
     }
+    
 }
 
 //MARK: - PickerViewController
