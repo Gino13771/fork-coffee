@@ -100,6 +100,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CafeTableViewCell", for: indexPath) as! CafeTableViewCell
         
@@ -162,4 +163,29 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
     }
     
     
+}
+
+extension ViewController {
+
+    // UITableViewDelegate方法，返回左滑编辑按钮
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "删除") { (action, indexPath) in
+            // 调用删除方法
+            self.handleDelete(at: indexPath)
+        }
+        return [deleteAction]
+    }
+
+    // 处理删除操作
+    func handleDelete(at indexPath: IndexPath) {
+        let cafeInfo = cafes[indexPath.row]
+        // 执行删除操作，比如从你的数据源数组中删除该元素
+        // 你需要根据你的数据源结构来进行相应的操作
+        cafes.remove(at: indexPath.row)
+        // 然后刷新tableView
+        tableview.deleteRows(at: [indexPath], with: .automatic)
+    }
+
+    // ... 其他代码 ...
+
 }
