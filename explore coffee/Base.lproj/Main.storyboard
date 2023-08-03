@@ -124,17 +124,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trg-xL-Tiu">
-                                <rect key="frame" x="307" y="139" width="20.666666666666686" height="22"/>
-                                <color key="tintColor" name="AccentColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="magnifyingglass" catalog="system"/>
-                                <connections>
-                                    <action selector="searchCity:" destination="Kib-vP-qhO" eventType="touchUpInside" id="NH8-ds-SKg"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="探索咖啡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfP-Bh-QJK">
-                                <rect key="frame" x="162" y="103" width="69" height="21"/>
+                                <rect key="frame" x="162" y="103" width="69.333333333333314" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
@@ -146,33 +137,49 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="location"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="148" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eWT-aC-2gb">
-                                <rect key="frame" x="0.0" y="188" width="393" height="581"/>
+                                <rect key="frame" x="0.0" y="238" width="393" height="531"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sloffee" translatesAutoresizingMaskIntoConstraints="NO" id="hXe-iN-232">
-                                <rect key="frame" x="0.0" y="188" width="393" height="581"/>
+                                <rect key="frame" x="0.0" y="238" width="393" height="531"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trg-xL-Tiu">
+                                <rect key="frame" x="91" y="182" width="211" height="34"/>
+                                <color key="backgroundColor" red="0.1176470518" green="0.20784312490000001" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="查詢">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchCity:" destination="Kib-vP-qhO" eventType="touchUpInside" id="VbZ-8V-cOv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xVw-PG-e42"/>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" systemColor="tintColor"/>
                         <constraints>
-                            <constraint firstItem="PfP-Bh-QJK" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="7PO-HL-fkY"/>
-                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="top" secondItem="xVw-PG-e42" secondAttribute="top" constant="36" id="86N-m2-Imr"/>
+                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="top" secondItem="fWM-gn-s5q" secondAttribute="topMargin" constant="79" id="ASp-C1-3NN"/>
                             <constraint firstItem="hXe-iN-232" firstAttribute="trailing" secondItem="xVw-PG-e42" secondAttribute="trailing" id="FKS-9Q-j6d"/>
                             <constraint firstItem="hXe-iN-232" firstAttribute="leading" secondItem="xVw-PG-e42" secondAttribute="leading" id="Hb8-Su-zyu"/>
-                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="leading" secondItem="1sV-cI-fny" secondAttribute="trailing" constant="5" id="ME7-j1-OeS"/>
+                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="JAC-Ys-BBd"/>
+                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="top" secondItem="1sV-cI-fny" secondAttribute="bottom" constant="19" id="LXK-K9-Hao"/>
                             <constraint firstItem="eWT-aC-2gb" firstAttribute="trailing" secondItem="xVw-PG-e42" secondAttribute="trailing" id="OQB-ES-YeH"/>
+                            <constraint firstItem="eWT-aC-2gb" firstAttribute="top" secondItem="Trg-xL-Tiu" secondAttribute="bottom" constant="22" id="OQt-IH-jDl"/>
                             <constraint firstItem="hXe-iN-232" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="S1C-Pd-Bb2"/>
                             <constraint firstItem="1sV-cI-fny" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="TDH-XE-mI8"/>
-                            <constraint firstItem="eWT-aC-2gb" firstAttribute="top" secondItem="1sV-cI-fny" secondAttribute="bottom" constant="25" id="amj-u3-kJa"/>
+                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="leading" secondItem="xVw-PG-e42" secondAttribute="leading" constant="91" id="TMv-WN-mJT"/>
+                            <constraint firstItem="PfP-Bh-QJK" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="VuK-9e-hf4"/>
+                            <constraint firstItem="xVw-PG-e42" firstAttribute="trailing" secondItem="1sV-cI-fny" secondAttribute="trailing" constant="91" id="bze-59-KbE"/>
+                            <constraint firstItem="xVw-PG-e42" firstAttribute="trailing" secondItem="Trg-xL-Tiu" secondAttribute="trailing" constant="91" id="emW-CT-AUa"/>
+                            <constraint firstItem="hXe-iN-232" firstAttribute="top" secondItem="xVw-PG-e42" secondAttribute="top" constant="135" id="g4t-Ek-AL3"/>
                             <constraint firstItem="PfP-Bh-QJK" firstAttribute="top" secondItem="xVw-PG-e42" secondAttribute="top" id="gJt-a6-e3S"/>
                             <constraint firstAttribute="bottom" secondItem="eWT-aC-2gb" secondAttribute="bottom" constant="83" id="gR3-mj-uXl"/>
                             <constraint firstItem="1sV-cI-fny" firstAttribute="leading" secondItem="xVw-PG-e42" secondAttribute="leading" constant="91" id="gRu-bc-s0F"/>
                             <constraint firstItem="eWT-aC-2gb" firstAttribute="leading" secondItem="xVw-PG-e42" secondAttribute="leading" id="hEO-mA-gwu"/>
-                            <constraint firstItem="Trg-xL-Tiu" firstAttribute="leading" secondItem="1sV-cI-fny" secondAttribute="trailing" constant="5" id="jTw-wG-qvV"/>
                             <constraint firstAttribute="bottom" secondItem="hXe-iN-232" secondAttribute="bottom" constant="83" id="o60-xk-HoP"/>
-                            <constraint firstItem="hXe-iN-232" firstAttribute="top" secondItem="xVw-PG-e42" secondAttribute="top" constant="85" id="qG3-Kf-S5v"/>
                             <constraint firstItem="eWT-aC-2gb" firstAttribute="centerX" secondItem="fWM-gn-s5q" secondAttribute="centerX" id="qdl-jj-EL0"/>
                             <constraint firstItem="1sV-cI-fny" firstAttribute="top" secondItem="PfP-Bh-QJK" secondAttribute="bottom" constant="5" id="wxw-Md-8mU"/>
                         </constraints>
@@ -308,7 +315,6 @@
     </scenes>
     <resources>
         <image name="globe" catalog="system" width="128" height="123"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="sloffee" width="626" height="626"/>
         <image name="sloffee2" width="750" height="745"/>
