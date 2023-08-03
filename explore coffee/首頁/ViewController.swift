@@ -8,6 +8,7 @@
 import UIKit
 import PKHUD
 import RealmSwift
+import UserNotifications
 
 
 class ViewController: UIViewController{
@@ -40,6 +41,19 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        func createNotificationContent () {
+                let content = UNMutableNotificationContent()    //建立內容透過指派content來取得UNMutableNotificationContent功能
+                content.title = "探索咖啡"                 //推播標題
+                content.subtitle = "快來邂逅好咖啡吧～"            //推播副標題
+                content.body = "忙碌的生活也不忘來杯咖啡！"        //推播內文
+                content.badge = 1                               //app的icon右上角跳出的紅色數字數量 line 999的那個
+            content.sound = UNNotificationSound.default
+                   
+                   let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                   let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+                   UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            }
+        
         pickerView.delegate = self
         pickerView.dataSource = self
         
@@ -54,7 +68,7 @@ class ViewController: UIViewController{
         
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
            versionLabel?.text = "App版本: " + version
-        
+        createNotificationContent()
         
     }
       
