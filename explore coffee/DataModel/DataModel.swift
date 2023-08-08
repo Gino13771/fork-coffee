@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct CafeInfo: Codable{
+struct CafeInfo: Codable {
     let id: String
     let name: String
     let address: String
-    let limited_time: String
-    let latitude: String
-    let longitude: String
+    let limited_time: String?
+    let latitude: String?
+    let longitude: String?
     let open_time: String
 }

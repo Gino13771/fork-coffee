@@ -9,6 +9,7 @@ import UIKit
 import PKHUD
 import RealmSwift
 import UserNotifications
+import CoreLocation
 
 
 class ViewController: UIViewController{
@@ -27,14 +28,20 @@ class ViewController: UIViewController{
     @objc func saveToRealm(_ sender: UIButton) {
         let index = sender.tag
         let dataModel = cafes[index]
-        let data = RLM_DataModel(id: dataModel.id,
-                                 name: dataModel.name,
-                                 address: dataModel.address,
-                                 open_time: dataModel.open_time)
-        let realm = FavoritesManager()
-        realm.addFavorite(item: data)
-        cafes[index] = dataModel
-               tableview.reloadData()
+        
+        if let latitude = dataModel.latitude, let longitude = dataModel.longitude {
+            let data = RLM_DataModel(id: dataModel.id,
+                                     name: dataModel.name,
+                                     address: dataModel.address,
+                                     open_time: dataModel.open_time,
+                                     latitude: latitude,
+                                     longitude: longitude)
+            
+            let realm = FavoritesManager()
+            realm.addFavorite(item: data)
+            cafes[index] = dataModel
+            tableview.reloadData()
+        }
     }
     
     

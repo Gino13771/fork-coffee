@@ -137,14 +137,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="location"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="148" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eWT-aC-2gb">
-                                <rect key="frame" x="0.0" y="238" width="393" height="531"/>
+                                <rect key="frame" x="0.0" y="239.66666666666669" width="393" height="529.33333333333326"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sloffee" translatesAutoresizingMaskIntoConstraints="NO" id="hXe-iN-232">
                                 <rect key="frame" x="0.0" y="238" width="393" height="531"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trg-xL-Tiu">
-                                <rect key="frame" x="91" y="182" width="211" height="34"/>
+                                <rect key="frame" x="91" y="182" width="211" height="35.666666666666657"/>
                                 <color key="backgroundColor" red="0.1176470518" green="0.20784312490000001" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                 <color key="tintColor" name="AccentColor"/>
@@ -152,6 +152,10 @@
                                 <state key="normal" title="查詢">
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
+                                <buttonConfiguration key="configuration" style="plain" title="查詢">
+                                    <fontDescription key="titleFontDescription" type="system" weight="thin" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="searchCity:" destination="Kib-vP-qhO" eventType="touchUpInside" id="VbZ-8V-cOv"/>
                                 </connections>
@@ -207,7 +211,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Gwf-Cv-XJi">
             <objects>
-                <viewController id="hxT-ZT-HmS" customClass="DetailViewController" customModule="explore_coffee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapIdentity" id="hxT-ZT-HmS" customClass="DetailViewController" customModule="explore_coffee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lV9-z4-J4o">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,7 +246,7 @@
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="navv:" destination="hxT-ZT-HmS" eventType="touchUpInside" id="INb-6w-JKc"/>
+                                    <action selector="navigateToCafe:" destination="hxT-ZT-HmS" eventType="touchUpInside" id="eHB-Jg-jG7"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12X-Z8-A8l">
@@ -280,10 +284,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="jGD-Rv-uhq"/>
                     <connections>
-                        <outlet property="cafeAddress" destination="v3A-N0-3s9" id="tmM-hv-Mqm"/>
-                        <outlet property="cafeName" destination="bPi-eJ-TL3" id="bfA-E5-jZ1"/>
-                        <outlet property="mapView" destination="12X-Z8-A8l" id="iXK-Ta-Rxp"/>
-                        <outlet property="openTime" destination="opB-6I-F8P" id="Ooe-To-oWV"/>
+                        <outlet property="cafeAddress" destination="v3A-N0-3s9" id="12g-8u-ned"/>
+                        <outlet property="cafeName" destination="bPi-eJ-TL3" id="u0a-th-1rv"/>
+                        <outlet property="mapView" destination="12X-Z8-A8l" id="aWl-rD-zSx"/>
+                        <outlet property="openTime" destination="opB-6I-F8P" id="uf9-ei-v5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Akp-A2-22v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

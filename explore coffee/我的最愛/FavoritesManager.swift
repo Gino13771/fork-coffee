@@ -10,10 +10,14 @@ import UIKit
 import RealmSwift
 
 class FavoritesManager {
-
+    
     func addFavorite(item: RLM_DataModel) {
         do {
-            let realm = try Realm()
+            let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { migration, oldSchemaVersion in
+                // 如果需要進行資料庫遷移，可以在這裡進行相關處理
+            })
+            let realm = try Realm(configuration: config)
+            
             let id = item.id
             let predicate = NSPredicate(format: "id == %@", id)
             let existingFavorite = realm.objects(RLM_DataModel.self).filter(predicate).first
@@ -29,6 +33,8 @@ class FavoritesManager {
             print("Error saving favorite: \(error.localizedDescription)")
         }
     }
+    
+    // 其他方法，如 removeFavorite 和 getFavorites
     
     func removeFavorite(itemID: String) {
         do {
@@ -65,7 +71,6 @@ extension Results {
         return self.map { $0 }
     }
 }
-
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
     // ... 其他代理方法保持不變 ...
@@ -81,4 +86,4 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
-    
+
