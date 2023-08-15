@@ -14,7 +14,7 @@ class FavoritesManager {
     func addFavorite(item: RLM_DataModel) {
         do {
             let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { migration, oldSchemaVersion in
-                // 如果需要進行資料庫遷移，可以在這裡進行相關處理
+                
             })
             let realm = try Realm(configuration: config)
             
@@ -34,7 +34,7 @@ class FavoritesManager {
         }
     }
     
-    // 其他方法，如 removeFavorite 和 getFavorites
+    
     
     func removeFavorite(itemID: String) {
         do {
@@ -73,7 +73,7 @@ extension Results {
 }
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
-    // ... 其他代理方法保持不變 ...
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

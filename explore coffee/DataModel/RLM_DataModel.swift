@@ -15,11 +15,11 @@ class RLM_DataModel: Object {
     @objc dynamic var open_time: String = ""
     @objc dynamic var latitude: String = ""
     @objc dynamic var longitude: String = ""
-
+    
     override static func primaryKey() -> String? {
         return "id"
     }
-
+    
     convenience init(id: String, name: String, address: String, open_time: String, latitude: String, longitude:String) {
         self.init()
         self.id = id
@@ -28,7 +28,7 @@ class RLM_DataModel: Object {
         self.open_time = open_time
         self.latitude = latitude
         self.longitude = longitude
-
+        
     }
 }
 

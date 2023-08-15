@@ -8,7 +8,7 @@
 import UIKit
 
 class CafeTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var limitTimeLabel: UILabel!
@@ -17,11 +17,10 @@ class CafeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
 }

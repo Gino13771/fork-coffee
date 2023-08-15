@@ -98,13 +98,8 @@ class DetailViewController: UIViewController {
         
         let targetItem = MKMapItem(placemark: targetPlacemark)
         
-        //guard let userLocation = mapView.userLocation.location else {
-           // print("無法取得使用者位置。")
-           // return
-       // }
+        
         let userMapItem = MKMapItem.forCurrentLocation()
-        //let userPlacemark = MKPlacemark(coordinate: userLocation.coordinate)
-        //let userMapItem = MKMapItem(placemark: userPlacemark)
         
         let routes = [userMapItem, targetItem]
         MKMapItem.openMaps(with: routes, launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])

@@ -14,12 +14,28 @@ import CoreLocation
 
 class ViewController: UIViewController{
     
+    let cityTranslations: [String: String] = [
+        "taipei": "台北",
+        "yilan": "宜蘭",
+        "taoyuan": "桃園",
+        "hsinchu": "新竹",
+        "miaoli": "苗栗",
+        "taichung": "台中",
+        "changhua": "彰化",
+        "Nantou": "南投",
+        "Yunlin": "雲林",
+        "Chiayi": "嘉義",
+        "Tainan": "台南",
+        "Kaohsiung": "高雄",
+        "Pingtung": "屏東",
+    ]
+    
     var cafes = [CafeInfo]()
     var pickerView = UIPickerView()
     let cities = ["taipei","yilan","taoyuan","hsinchu","miaoli","taichung","changhua","Nantou","Yunlin","Chiayi","Tainan","Kaohsiung","Pingtung"]
     
     let apiUrlString = "https://cafenomad.tw/api/v1.2/cafes"
-    var item: RLM_DataModel? // 
+    var item: RLM_DataModel?
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableview: UITableView!
@@ -49,17 +65,17 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         
         func createNotificationContent () {
-                let content = UNMutableNotificationContent()    //建立內容透過指派content來取得UNMutableNotificationContent功能
-                content.title = "探索咖啡"                 //推播標題
-                content.subtitle = "快來邂逅好咖啡吧～"            //推播副標題
-                content.body = "忙碌的生活也不忘來杯咖啡！"        //推播內文
-                content.badge = 1                               //app的icon右上角跳出的紅色數字數量 line 999的那個
+            let content = UNMutableNotificationContent()
+            content.title = "探索咖啡"
+            content.subtitle = "快來邂逅好咖啡吧～"
+            content.body = "忙碌的生活也不忘來杯咖啡！"
+            content.badge = 1
             content.sound = UNNotificationSound.default
-                   
-                   let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-                   let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
-                   UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-            }
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -74,12 +90,12 @@ class ViewController: UIViewController{
         tableview?.register(nib, forCellReuseIdentifier: "CafeTableViewCell")
         
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-           versionLabel?.text = "App版本: " + version
+        versionLabel?.text = "App版本: " + version
         createNotificationContent()
         
     }
-      
-
+    
+    
     
     @IBAction func searchCity(_ sender: Any) {
         if let searchText = textField.text {
@@ -129,15 +145,14 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         cell.cafeNameLabel?.text = cafeInfo.name
         cell.cafeAddressLabel.text = cafeInfo.address
         
-        // Don't set the heart button's image here.
-        // We'll update it in the tableView(_:willDisplay:forRowAt:) method.
+        
         
         cell.collectBtn.addTarget(self, action: #selector(saveToRealm), for: .touchUpInside)
         cell.collectBtn.tag = indexPath.row
         
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cafeCell = cell as? CafeTableViewCell {
             let cafeInfo = cafes[indexPath.row]
@@ -165,7 +180,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
 }
 
 //MARK: - PickerViewController
-extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -175,38 +190,40 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return cities[row]
+        let englishCity = cities[row]
+        if let chineseCity = cityTranslations[englishCity] {
+            return chineseCity
+        } else {
+            return englishCity
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         textField.text = cities[row]
         textField.resignFirstResponder()
     }
-    
-    
 }
 
 extension ViewController {
-
-    // UITableViewDelegate方法，返回左滑编辑按钮
+    
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "删除") { (action, indexPath) in
-            // 调用删除方法
+            
             self.handleDelete(at: indexPath)
         }
         return [deleteAction]
     }
-
-    // 处理删除操作
+    
+    
     func handleDelete(at indexPath: IndexPath) {
         let cafeInfo = cafes[indexPath.row]
-        // 执行删除操作，比如从你的数据源数组中删除该元素
-        // 你需要根据你的数据源结构来进行相应的操作
+        
         cafes.remove(at: indexPath.row)
-        // 然后刷新tableView
+        
         tableview.deleteRows(at: [indexPath], with: .automatic)
     }
-
-    // ... 其他代码 ...
-
+    
+    
+    
 }
