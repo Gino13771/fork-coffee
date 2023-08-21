@@ -64,7 +64,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        func createNotificationContent () {
+        func createDailyNotification() {
             let content = UNMutableNotificationContent()
             content.title = "探索咖啡"
             content.subtitle = "快來邂逅好咖啡吧～"
@@ -72,8 +72,12 @@ class ViewController: UIViewController{
             content.badge = 1
             content.sound = UNNotificationSound.default
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-            let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+            var dateComponents = DateComponents()
+            dateComponents.hour = 12
+            dateComponents.minute = 0
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            let request = UNNotificationRequest(identifier: "dailyNotification", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
         
@@ -91,7 +95,7 @@ class ViewController: UIViewController{
         
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         versionLabel?.text = "App版本: " + version
-        createNotificationContent()
+        createDailyNotification()
         
     }
     

@@ -16,6 +16,13 @@ class CafeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //cafeNameLabel.numberOfLines = 0
+       // cafeAddressLabel.numberOfLines = 0
+        
+       // cafeNameLabel.lineBreakMode = .byWordWrapping
+        //cafeAddressLabel.lineBreakMode = .byWordWrapping
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
