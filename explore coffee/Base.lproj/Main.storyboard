@@ -14,7 +14,7 @@
         <!--Navigation Controller-->
         <scene sceneID="82d-Zp-Pl3">
             <objects>
-                <navigationController id="xcs-0K-Gbs" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="xcs-0K-Gbs" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JC8-c5-lHX">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -318,7 +318,9 @@
                             <constraint firstItem="Sfx-xp-9Ej" firstAttribute="top" secondItem="12X-Z8-A8l" secondAttribute="bottom" constant="5" id="zeL-6s-KHC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jGD-Rv-uhq"/>
+                    <navigationItem key="navigationItem" id="jGD-Rv-uhq">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="bUK-nV-gm7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cafeAddress" destination="v3A-N0-3s9" id="12g-8u-ned"/>
                         <outlet property="cafeName" destination="bPi-eJ-TL3" id="u0a-th-1rv"/>

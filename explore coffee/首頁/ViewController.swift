@@ -202,7 +202,8 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        textField.text = cities[row]
+        let selectedCity = Array(cityTranslations.keys)[row]
+        textField.text = cityTranslations[selectedCity]
         textField.resignFirstResponder()
     }
 }
