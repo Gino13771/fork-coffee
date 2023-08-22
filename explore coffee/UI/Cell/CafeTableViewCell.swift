@@ -17,11 +17,11 @@ class CafeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //cafeNameLabel.numberOfLines = 0
-       // cafeAddressLabel.numberOfLines = 0
+        cafeNameLabel.numberOfLines = 0
+        cafeAddressLabel.numberOfLines = 0
         
-       // cafeNameLabel.lineBreakMode = .byWordWrapping
-        //cafeAddressLabel.lineBreakMode = .byWordWrapping
+        cafeNameLabel.lineBreakMode = .byWordWrapping
+        cafeAddressLabel.lineBreakMode = .byWordWrapping
         
     }
     

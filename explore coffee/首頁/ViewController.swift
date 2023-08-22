@@ -64,6 +64,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         func createDailyNotification() {
             let content = UNMutableNotificationContent()
             content.title = "探索咖啡"
@@ -147,9 +148,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cafeInfo = cafes[indexPath.row]
         cell.cafeNameLabel?.text = cafeInfo.name
-        cell.cafeAddressLabel.text = cafeInfo.address
-        
-        
+        cell.cafeAddressLabel.text = cafeInfo.address 
         
         cell.collectBtn.addTarget(self, action: #selector(saveToRealm), for: .touchUpInside)
         cell.collectBtn.tag = indexPath.row

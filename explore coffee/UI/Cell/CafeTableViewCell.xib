@@ -21,14 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="436" height="148"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jH-U1-Xvv" userLabel="Cafe Name">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jH-U1-Xvv" userLabel="Cafe Name">
                                 <rect key="frame" x="21" y="27" width="41" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcs-oC-s5R" userLabel="Cafe Address">
-                                <rect key="frame" x="20.999999999999996" y="86" width="34.666666666666657" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcs-oC-s5R" userLabel="Cafe Address">
+                                <rect key="frame" x="21" y="86" width="394" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,6 +46,7 @@
                             <constraint firstItem="4n8-WE-el6" firstAttribute="centerY" secondItem="2jH-U1-Xvv" secondAttribute="centerY" id="HW8-fY-esx"/>
                             <constraint firstItem="2jH-U1-Xvv" firstAttribute="top" secondItem="Fy5-ce-lTE" secondAttribute="top" constant="27" id="Hca-mj-qmQ"/>
                             <constraint firstItem="4n8-WE-el6" firstAttribute="top" secondItem="Fy5-ce-lTE" secondAttribute="top" constant="20" id="MRX-nz-hzI"/>
+                            <constraint firstAttribute="trailing" secondItem="pcs-oC-s5R" secondAttribute="trailing" constant="21" id="Pfr-Jh-Wrg"/>
                             <constraint firstItem="pcs-oC-s5R" firstAttribute="leading" secondItem="Fy5-ce-lTE" secondAttribute="leading" constant="21" id="W6t-f8-NLQ"/>
                             <constraint firstItem="pcs-oC-s5R" firstAttribute="leading" secondItem="2jH-U1-Xvv" secondAttribute="leading" id="gkk-O5-ixQ"/>
                             <constraint firstAttribute="trailing" secondItem="4n8-WE-el6" secondAttribute="trailing" constant="10" id="pdc-O4-5qr"/>
