@@ -148,7 +148,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cafeInfo = cafes[indexPath.row]
         cell.cafeNameLabel?.text = cafeInfo.name
-        cell.cafeAddressLabel.text = cafeInfo.address 
+        cell.cafeAddressLabel.text = cafeInfo.address
         
         cell.collectBtn.addTarget(self, action: #selector(saveToRealm), for: .touchUpInside)
         cell.collectBtn.tag = indexPath.row
@@ -202,24 +202,13 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedCity = Array(cityTranslations.keys)[row]
-        textField.text = cityTranslations[selectedCity]
-        textField.resignFirstResponder()
+            textField.text = cities[row]
+            textField.resignFirstResponder()
+        }
     }
-}
 
 extension ViewController {
-    
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "删除") { (action, indexPath) in
-            
-            self.handleDelete(at: indexPath)
-        }
-        return [deleteAction]
-    }
-    
-    
+
     func handleDelete(at indexPath: IndexPath) {
         let cafeInfo = cafes[indexPath.row]
         
