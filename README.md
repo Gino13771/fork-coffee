@@ -13,6 +13,7 @@
 * 使用 CafeTableViewCell 進入地圖搜索
 * 預期的 UI 效果
 
+![GITHUB]( https://github.com/Gino13771/fork-coffee/blob/master/coffee.png "coffee")
 * 使用在地推播的方式
   ```js
     func createDailyNotification() {
